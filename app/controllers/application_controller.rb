@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_cart
-    @cart = Product.find(session[:cart])
+    @cart = Product.where(id: session[:cart])
   end
 end

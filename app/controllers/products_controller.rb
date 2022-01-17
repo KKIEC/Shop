@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show update destroy ]
 
   def add_to_cart
     id = params[:id].to_i
@@ -25,10 +25,6 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-  end
-
-  # GET /products/1/edit
-  def edit
   end
 
   # POST /products or /products.json

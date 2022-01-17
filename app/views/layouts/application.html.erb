@@ -12,12 +12,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <center>
+      <h1>Stripe Shop demo</h1>
+    </center>
+    <hr>
+    <p class="notice" style="background-color: green;"><%= notice %></p>
+    <p class="alert" style="background-color: red;"><%= alert %></p>
 
     <%= link_to 'Products', products_path %>
     <%= link_to 'Github', 'https://github.com/KKIEC/Shop', target: '_blank' %>
-    <% if current_user %>
+    <% if user_signed_in? %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       <%= current_user.stripe_customer_id %>
